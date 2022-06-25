@@ -1,4 +1,4 @@
-app = "blag-99e5"
+app = "gitpodify"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = [ ]
