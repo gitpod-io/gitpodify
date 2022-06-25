@@ -134,7 +134,7 @@ export default function Index() {
                 alt="Open in Gitpod"
                 width="200"
                 height="56"
-                src="https://gitpod.io/button/open-in-gitpod.svg"
+                src="/open-in-gitpod.svg"
               />
             </a>
           </div>
