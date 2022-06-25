@@ -39,7 +39,9 @@ export default function Index() {
   return (
     <main className="px-2">
       <div className="flex flex-col items-center">
-        <div className="py-12 lg:py-28" />
+        <div className="py-4 lg:py-12" />
+        <img src="/gitpod.svg" width="100" height="100" alt="Gitpod Logo" />
+
         <h1 className="text-7xl font-bold text-gray-900">Gitpodify</h1>
       </div>
 
