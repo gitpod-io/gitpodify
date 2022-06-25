@@ -1,4 +1,5 @@
-import { json, LoaderFunction } from "@remix-run/node";
+import type { LoaderFunction } from "@remix-run/node";
+import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 
 type LoaderData = {
@@ -42,7 +43,7 @@ export default function Index() {
               id="url"
               type="text"
               name="url"
-              defaultValue={url || ''}
+              defaultValue={url || ""}
               className="w-full rounded-full border px-4 py-2 text-xl"
             />
           </div>
@@ -58,62 +59,66 @@ export default function Index() {
         </div>
       </form>
 
-      <div className="pb-32">
-        <h2 className="mx-auto mt-8 mb-4 max-w-3xl text-4xl font-bold text-gray-800">
-          Links
-        </h2>
+      {url ? (
+        <div className="pb-32">
+          <h2 className="mx-auto mt-8 mb-4 max-w-3xl text-4xl font-bold text-gray-800">
+            Links
+          </h2>
 
-        <div className="mx-auto mb-4 max-w-3xl">
-          <a
-            href={gitpodifiedUrl}
-            target="_blank"
-            rel="noreferrer nofollow"
-            className=" text-sky-600 underline hover:text-sky-500"
-          >
-            {gitpodifiedUrl}
-          </a>
+          <div className="mx-auto mb-4 max-w-3xl">
+            <a
+              href={gitpodifiedUrl}
+              target="_blank"
+              rel="noreferrer nofollow"
+              className=" text-sky-600 underline hover:text-sky-500"
+            >
+              {gitpodifiedUrl}
+            </a>
+          </div>
+
+          <p className="mx-auto max-w-3xl text-sm text-gray-700"> HTML </p>
+          <div className="mb-4 py-2" style={{ backgroundColor: "#f9f9f9" }}>
+            <pre className="mx-auto max-w-3xl overflow-x-scroll pb-4">
+              {`<a href="${gitpodifiedUrl}" target="_blank" rel="noreferrer nofollow">\n  Open in Gitpod\n</a>`}
+            </pre>
+          </div>
+
+          <p className="mx-auto max-w-3xl  text-sm text-gray-700"> Markdown </p>
+          <div className="mb-4  py-2" style={{ backgroundColor: "#f9f9f9" }}>
+            <pre className="mx-auto max-w-3xl  overflow-x-scroll  pb-4">
+              {`[Open in Gitpod](${gitpodifiedUrl})`}
+            </pre>
+          </div>
+
+          <h2 className="mx-auto mt-8 mb-4 max-w-3xl text-4xl font-bold text-gray-800">
+            {" "}
+            Buttons{" "}
+          </h2>
+
+          <div className="mx-auto mb-4 max-w-3xl">
+            <a
+              href={gitpodifiedUrl}
+              target="_blank"
+              rel="noreferrer nofollow"
+              className="rounded-2xl"
+            >
+              <img
+                alt="Open in Gitpod"
+                src="https://gitpod.io/button/open-in-gitpod.svg"
+              />
+            </a>
+          </div>
+
+          <p className="mx-auto max-w-3xl text-sm text-gray-700"> HTML </p>
+          <div className="mb-4 py-2" style={{ backgroundColor: "#f9f9f9" }}>
+            <pre className="mx-auto max-w-3xl  overflow-x-scroll  pb-4">
+              {`<a href="${gitpodifiedUrl}" target="_blank" rel="noreferrer nofollow"> \n  <img alt="Open in Gitpod" src="https://gitpod.io/button/open-in-gitpod.svg"/>\n</a>`}
+            </pre>
+          </div>
         </div>
-
-        <p className="mx-auto max-w-3xl text-sm text-gray-700"> HTML </p>
-        <div className="mb-4 py-2" style={{ backgroundColor: "#f9f9f9" }}>
-          <pre className="mx-auto max-w-3xl overflow-x-scroll pb-4">
-            {`<a href="${gitpodifiedUrl}" target="_blank" rel="noreferrer nofollow">\n  Open in Gitpod\n</a>`}
-          </pre>
-        </div>
-
-        <p className="mx-auto max-w-3xl  text-sm text-gray-700"> Markdown </p>
-        <div className="mb-4  py-2" style={{ backgroundColor: "#f9f9f9" }}>
-          <pre className="mx-auto max-w-3xl  overflow-x-scroll  pb-4">
-            {`[Open in Gitpod](${gitpodifiedUrl})`}
-          </pre>
-        </div>
-
-        <h2 className="mx-auto mt-8 mb-4 max-w-3xl text-4xl font-bold text-gray-800">
-          {" "}
-          Buttons{" "}
-        </h2>
-
-        <div className="mx-auto mb-4 max-w-3xl">
-          <a
-            href={gitpodifiedUrl}
-            target="_blank"
-            rel="noreferrer nofollow"
-            className="rounded-2xl"
-          >
-            <img
-              alt="Open in Gitpod"
-              src="https://gitpod.io/button/open-in-gitpod.svg"
-            />
-          </a>
-        </div>
-
-        <p className="mx-auto max-w-3xl text-sm text-gray-700"> HTML </p>
-        <div className="mb-4 py-2" style={{ backgroundColor: "#f9f9f9" }}>
-          <pre className="mx-auto max-w-3xl  overflow-x-scroll  pb-4">
-            {`<a href="${gitpodifiedUrl}" target="_blank" rel="noreferrer nofollow"> \n  <img alt="Open in Gitpod" src="https://gitpod.io/button/open-in-gitpod.svg"/>\n</a>`}
-          </pre>
-        </div>
-      </div>
+      ) : (
+        <div className="py-32" />
+      )}
       <footer className="py-4 text-center">
         Made with ❤️ by{" "}
         <a
