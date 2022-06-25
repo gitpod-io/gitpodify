@@ -1,0 +1,15 @@
+{
+  "background_color": "#ffffff",
+  "theme_color": "#e5e5e5",
+  "name": "Gitpodify Website",
+  "short_name": "Gitpodify",
+  "display": "minimal-ui",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "favicon192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
