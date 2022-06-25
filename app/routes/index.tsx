@@ -21,6 +21,17 @@ export const loader: LoaderFunction = async ({ request }) => {
   });
 };
 
+const suggestions = [
+  {
+    name: "jacobparis/new",
+    url: "https://github.com/jacobparis/new",
+  },
+  {
+    name: "remix-run/indie-stack",
+    url: "https://github.com/remix-run/indie-stack",
+  },
+];
+
 export default function Index() {
   const { url } = useLoaderData<LoaderData>();
   const gitpodifiedUrl = `https://gitpod.io/#${url}`;
@@ -39,6 +50,18 @@ export default function Index() {
               Enter the URL to any GitHub, GitLab or Bitbucket repository,
               branch, or pull/merge request.
             </label>
+            <ul className="mx-auto flex max-w-3xl flex-wrap space-x-4 text-sm">
+              {suggestions.map((suggestion) => (
+                <li key={suggestion.name}>
+                  <a
+                    href={`?url=${suggestion.url}`}
+                    className="text-sky-600 underline hover:text-sky-500"
+                  >
+                    {suggestion.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
             <input
               id="url"
               type="text"
