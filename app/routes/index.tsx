@@ -188,7 +188,7 @@ export default function Index() {
             </summary>
             <div className="mb-4 py-2" style={{ backgroundColor: "#f9f9f9" }}>
               <pre className="mx-auto max-w-3xl overflow-x-scroll  pb-4  lg:max-w-4xl">
-                {`<a href="${gitpodifiedUrl}" target="_blank" rel="noreferrer nofollow"> \n  <img\n    alt="Contribute to Gitpod"\n    width="200"\n    height="56"\n    src="https://img.shields.io/badge/Contribute%20with-Gitpod-908a85?logo=gitpod"\n  />\n</a>`}
+                {`<a href="${gitpodifiedUrl}" target="_blank" rel="noreferrer nofollow"> \n  <img\n    alt="Contribute with Gitpod"\n    width="200"\n    height="56"\n    src="https://img.shields.io/badge/Contribute%20with-Gitpod-908a85?logo=gitpod"\n  />\n</a>`}
               </pre>
             </div>
           </details>
@@ -199,7 +199,7 @@ export default function Index() {
             </summary>
             <div className="mb-4  py-2" style={{ backgroundColor: "#f9f9f9" }}>
               <pre className="mx-auto max-w-3xl overflow-x-scroll  pb-4  lg:max-w-4xl">
-                {`[![Contribute to Gitpod](https://img.shields.io/badge/Contribute%20with-Gitpod-908a85?logo=gitpod)](${gitpodifiedUrl})`}
+                {`[![Contribute with Gitpod](https://img.shields.io/badge/Contribute%20with-Gitpod-908a85?logo=gitpod)](${gitpodifiedUrl})`}
               </pre>
             </div>
           </details>
