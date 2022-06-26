@@ -232,7 +232,7 @@ function CodeDetails({
         {summary}
       </summary>
 
-      <div className="flex items-baseline gap-x-2">
+      <div className="mx-auto flex max-w-3xl items-baseline gap-x-2 lg:max-w-4xl">
         {/* Including as a default for all of them */}
         <CopyToClipboard code={code} />
 
