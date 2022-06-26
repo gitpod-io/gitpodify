@@ -1,7 +1,7 @@
 import type { LoaderFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
-
+import useClipboard from "react-use-clipboard";
 type LoaderData = {
   url: string | null;
 };
@@ -249,5 +249,51 @@ ports:
         </a>
       </footer>
     </main>
+  );
+}
+
+function CopyToClipboard({ code }: { code: string }) {
+  const [isCopied, setCopied] = useClipboard(code, { successDuration: 1000 });
+
+  return (
+    <button
+      onClick={setCopied}
+      aria-label="Copy code to clipboard"
+      className="p-1 transition-all duration-100 ease-in-out "
+    >
+      {/* A little extra padding on the button for a bigger-than-visual hit area  */}
+      <div className="rounded-xl border px-3 py-2 hover:bg-gray-100">
+        {isCopied ? (
+          // prettier-ignore
+          <span className="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><g fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></g></svg>
+          <span className="px-2">
+          Copied to clipboard
+            </span>
+          </span>
+        ) : (
+          <span className="flex items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="12"
+              viewBox="0 0 24 24"
+            >
+              <g
+                strokeLinejoin="round"
+                strokeLinecap="round"
+                strokeWidth="2"
+                fill="none"
+                stroke="currentColor"
+              >
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </g>
+            </svg>
+            <span className="px-2">Copy to clipboard</span>
+          </span>
+        )}
+      </div>
+    </button>
   );
 }
