@@ -131,6 +131,7 @@ export default function Index() {
               href={gitpodifiedUrl}
               target="_blank"
               rel="noreferrer nofollow"
+              // Rounded so the focus outline matches the image border
               className="rounded-2xl"
             >
               <img
@@ -171,7 +172,8 @@ export default function Index() {
               href={gitpodifiedUrl}
               target="_blank"
               rel="noreferrer nofollow"
-              className="rounded-2xl"
+              // Rounded so the focus outline matches the image border
+              className="rounded"
             >
               <img
                 alt="Contribute with Gitpod"
@@ -209,7 +211,14 @@ export default function Index() {
           </h2>
           <details>
             <summary className="mx-auto mb-1 max-w-3xl text-sm text-gray-800 lg:max-w-4xl">
-              yml template file (<a className="text-blue-600 visited:text-orange-600" href="https://www.gitpod.io/docs/references/gitpod-yml">check this for more reference</a>)
+              yml template file (
+              <a
+                className="text-sky-600 underline hover:text-sky-500"
+                href="https://www.gitpod.io/docs/references/gitpod-yml"
+              >
+                check this for more reference
+              </a>
+              )
             </summary>
             <pre className="mx-auto max-w-3xl overflow-x-scroll  pb-4  lg:max-w-4xl">
               <code>{`
@@ -224,7 +233,6 @@ ports:
 `}</code>
             </pre>
           </details>  
-
         </div>
       ) : (
         <div className="py-32" />
