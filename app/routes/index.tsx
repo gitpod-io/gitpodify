@@ -137,7 +137,7 @@ export default function Index() {
                 alt="Open in Gitpod"
                 width="200"
                 height="56"
-                src="https://gitpod.io/button/open-in-gitpod.svg"
+                src="/open-in-gitpod.svg"
               />
             </a>
           </div>
@@ -177,7 +177,7 @@ export default function Index() {
                 alt="Contribute with Gitpod"
                 width="200"
                 height="56"
-                src="https://img.shields.io/badge/Contribute%20with-Gitpod-908a85?logo=gitpod"
+                src="/contribute-with-gitpod.svg"
               />
             </a>
           </div>
