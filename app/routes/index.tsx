@@ -101,24 +101,27 @@ export default function Index() {
             </a>
           </div>
 
-          <p className="mx-auto mb-1 max-w-3xl text-sm text-gray-700 lg:max-w-4xl">
-            HTML
-          </p>
-          <div className="mb-4 py-2" style={{ backgroundColor: "#f9f9f9" }}>
-            <pre className="mx-auto max-w-3xl overflow-x-scroll pb-4 lg:max-w-4xl">
-              {`<a href="${gitpodifiedUrl}" target="_blank" rel="noreferrer nofollow">\n  Open in Gitpod\n</a>`}
-            </pre>
-          </div>
+          <details>
+            <summary className="mx-auto mb-1 max-w-3xl text-sm text-gray-800 lg:max-w-4xl">
+              HTML
+            </summary>
+            <div className="mb-4 py-2" style={{ backgroundColor: "#f9f9f9" }}>
+              <pre className="mx-auto max-w-3xl overflow-x-scroll pb-4 lg:max-w-4xl">
+                {`<a href="${gitpodifiedUrl}" target="_blank" rel="noreferrer nofollow">\n  Open in Gitpod\n</a>`}
+              </pre>
+            </div>
+          </details>
 
-          <p className="mx-auto mb-1 max-w-3xl text-sm  text-gray-700 lg:max-w-4xl">
-            Markdown
-          </p>
-          <div className="mb-4  py-2" style={{ backgroundColor: "#f9f9f9" }}>
-            <pre className="mx-auto max-w-3xl overflow-x-scroll  pb-4  lg:max-w-4xl">
-              {`[Open in Gitpod](${gitpodifiedUrl})`}
-            </pre>
-          </div>
-
+          <details>
+            <summary className="mx-auto mb-1 max-w-3xl text-sm text-gray-800 lg:max-w-4xl">
+              Markdown
+            </summary>
+            <div className="mb-4  py-2" style={{ backgroundColor: "#f9f9f9" }}>
+              <pre className="mx-auto max-w-3xl overflow-x-scroll  pb-4  lg:max-w-4xl">
+                {`[Open in Gitpod](${gitpodifiedUrl})`}
+              </pre>
+            </div>
+          </details>
           <h2 className="mx-auto mt-8 mb-4 max-w-3xl text-4xl font-bold text-gray-800 lg:max-w-4xl">
             Buttons
           </h2>
@@ -139,23 +142,89 @@ export default function Index() {
             </a>
           </div>
 
-          <p className="mx-auto mb-1 max-w-3xl text-sm text-gray-700 lg:max-w-4xl">
-            HTML
-          </p>
-          <div className="mb-4 py-2" style={{ backgroundColor: "#f9f9f9" }}>
-            <pre className="mx-auto max-w-3xl overflow-x-scroll  pb-4  lg:max-w-4xl">
-              {`<a href="${gitpodifiedUrl}" target="_blank" rel="noreferrer nofollow"> \n  <img\n    alt="Open in Gitpod"\n    width="200"\n    height="56"\n    src="https://gitpod.io/button/open-in-gitpod.svg"\n  />\n</a>`}
-            </pre>
+          <details>
+            <summary className="mx-auto mb-1 max-w-3xl text-sm text-gray-800 lg:max-w-4xl">
+              HTML
+            </summary>
+            <div className="mb-4 py-2" style={{ backgroundColor: "#f9f9f9" }}>
+              <pre className="mx-auto max-w-3xl overflow-x-scroll  pb-4  lg:max-w-4xl">
+                {`<a href="${gitpodifiedUrl}" target="_blank" rel="noreferrer nofollow"> \n  <img\n    alt="Open in Gitpod"\n    width="200"\n    height="56"\n    src="https://gitpod.io/button/open-in-gitpod.svg"\n  />\n</a>`}
+              </pre>
+            </div>
+          </details>
+
+          <details>
+            <summary className="mx-auto mb-1 max-w-3xl text-sm text-gray-800 lg:max-w-4xl">
+              Markdown
+            </summary>
+            <div className="mb-4  py-2" style={{ backgroundColor: "#f9f9f9" }}>
+              <pre className="mx-auto max-w-3xl overflow-x-scroll  pb-4  lg:max-w-4xl">
+                {`[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](${gitpodifiedUrl})`}
+              </pre>
+            </div>
+          </details>
+
+          <br></br>
+
+          <div className="mx-auto mb-4 max-w-3xl lg:max-w-4xl">
+            <a
+              href={gitpodifiedUrl}
+              target="_blank"
+              rel="noreferrer nofollow"
+              className="rounded-2xl"
+            >
+              <img
+                alt="Contribute with Gitpod"
+                width="200"
+                height="56"
+                src="/contribute-with-gitpod.svg"
+              />
+            </a>
           </div>
 
-          <p className="mx-auto mb-1 max-w-3xl  text-sm text-gray-700 lg:max-w-4xl">
-            Markdown
-          </p>
-          <div className="mb-4  py-2" style={{ backgroundColor: "#f9f9f9" }}>
+          <details>
+            <summary className="mx-auto mb-1 max-w-3xl text-sm text-gray-800 lg:max-w-4xl">
+              HTML
+            </summary>
+            <div className="mb-4 py-2" style={{ backgroundColor: "#f9f9f9" }}>
+              <pre className="mx-auto max-w-3xl overflow-x-scroll  pb-4  lg:max-w-4xl">
+                {`<a href="${gitpodifiedUrl}" target="_blank" rel="noreferrer nofollow"> \n  <img\n    alt="Contribute with Gitpod"\n    width="200"\n    height="56"\n    src="https://img.shields.io/badge/Contribute%20with-Gitpod-908a85?logo=gitpod"\n  />\n</a>`}
+              </pre>
+            </div>
+          </details>
+
+          <details>
+            <summary className="mx-auto mb-1 max-w-3xl text-sm text-gray-800 lg:max-w-4xl">
+              Markdown
+            </summary>
+            <div className="mb-4  py-2" style={{ backgroundColor: "#f9f9f9" }}>
+              <pre className="mx-auto max-w-3xl overflow-x-scroll  pb-4  lg:max-w-4xl">
+                {`[![Contribute with Gitpod](https://img.shields.io/badge/Contribute%20with-Gitpod-908a85?logo=gitpod)](${gitpodifiedUrl})`}
+              </pre>
+            </div>
+          </details>
+
+          <h2 className="mx-auto mt-8 mb-4 max-w-3xl text-4xl font-bold text-gray-800 lg:max-w-4xl">
+            <code>.gitpod.yml</code> file
+          </h2>
+          <details>
+            <summary className="mx-auto mb-1 max-w-3xl text-sm text-gray-800 lg:max-w-4xl">
+              yml template file (<a className="text-blue-600 visited:text-orange-600" href="https://www.gitpod.io/docs/references/gitpod-yml">check this for more reference</a>)
+            </summary>
             <pre className="mx-auto max-w-3xl overflow-x-scroll  pb-4  lg:max-w-4xl">
-              {`[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](${gitpodifiedUrl})`}
+              <code>{`
+# Commands to start on workspace startup
+tasks:
+  - init: yarn install
+    command: yarn build
+# Ports to expose on workspace startup
+ports:
+  - port: 8000
+    onOpen: open-preview
+`}</code>
             </pre>
-          </div>
+          </details>  
+
         </div>
       ) : (
         <div className="py-32" />
