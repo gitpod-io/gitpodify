@@ -9,7 +9,7 @@ ports:
 
 tasks:
   - init: npm install
-    command: npm run setup && npm run dev
+    command: npm run dev
 
 vscode:
   extensions:

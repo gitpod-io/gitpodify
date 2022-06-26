@@ -1,7 +1,8 @@
 import type { LoaderFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
-
+import type { ReactNode } from "react";
+import useClipboard from "react-use-clipboard";
 type LoaderData = {
   url: string | null;
 };
@@ -101,27 +102,16 @@ export default function Index() {
             </a>
           </div>
 
-          <details>
-            <summary className="mx-auto mb-1 max-w-3xl text-sm text-gray-800 lg:max-w-4xl">
-              HTML
-            </summary>
-            <div className="mb-4 py-2" style={{ backgroundColor: "#f9f9f9" }}>
-              <pre className="mx-auto max-w-3xl overflow-x-scroll pb-4 lg:max-w-4xl">
-                {`<a href="${gitpodifiedUrl}" target="_blank" rel="noreferrer nofollow">\n  Open in Gitpod\n</a>`}
-              </pre>
-            </div>
-          </details>
+          <CodeDetails
+            summary="HTML"
+            code={`<a href="${gitpodifiedUrl}" target="_blank" rel="noreferrer nofollow">\n  Open in Gitpod\n</a>`}
+          />
 
-          <details>
-            <summary className="mx-auto mb-1 max-w-3xl text-sm text-gray-800 lg:max-w-4xl">
-              Markdown
-            </summary>
-            <div className="mb-4  py-2" style={{ backgroundColor: "#f9f9f9" }}>
-              <pre className="mx-auto max-w-3xl overflow-x-scroll  pb-4  lg:max-w-4xl">
-                {`[Open in Gitpod](${gitpodifiedUrl})`}
-              </pre>
-            </div>
-          </details>
+          <CodeDetails
+            summary="Markdown"
+            code={`[Open in Gitpod](${gitpodifiedUrl})`}
+          />
+
           <h2 className="mx-auto mt-8 mb-4 max-w-3xl text-4xl font-bold text-gray-800 lg:max-w-4xl">
             Buttons
           </h2>
@@ -131,6 +121,7 @@ export default function Index() {
               href={gitpodifiedUrl}
               target="_blank"
               rel="noreferrer nofollow"
+              // Rounded so the focus outline matches the image border
               className="rounded-2xl"
             >
               <img
@@ -142,36 +133,27 @@ export default function Index() {
             </a>
           </div>
 
-          <details>
-            <summary className="mx-auto mb-1 max-w-3xl text-sm text-gray-800 lg:max-w-4xl">
-              HTML
-            </summary>
-            <div className="mb-4 py-2" style={{ backgroundColor: "#f9f9f9" }}>
-              <pre className="mx-auto max-w-3xl overflow-x-scroll  pb-4  lg:max-w-4xl">
-                {`<a href="${gitpodifiedUrl}" target="_blank" rel="noreferrer nofollow"> \n  <img\n    alt="Open in Gitpod"\n    width="200"\n    height="56"\n    src="https://gitpod.io/button/open-in-gitpod.svg"\n  />\n</a>`}
-              </pre>
-            </div>
-          </details>
+          <CodeDetails
+            summary="HTML"
+            code={`<a href="${gitpodifiedUrl}" target="_blank" rel="noreferrer nofollow"> \n  <img\n    alt="Open in Gitpod"\n    width="200"\n    height="56"\n    src="https://gitpod.io/button/open-in-gitpod.svg"\n  />\n</a>`}
+          />
 
-          <details>
-            <summary className="mx-auto mb-1 max-w-3xl text-sm text-gray-800 lg:max-w-4xl">
-              Markdown
-            </summary>
-            <div className="mb-4  py-2" style={{ backgroundColor: "#f9f9f9" }}>
-              <pre className="mx-auto max-w-3xl overflow-x-scroll  pb-4  lg:max-w-4xl">
-                {`[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](${gitpodifiedUrl})`}
-              </pre>
-            </div>
-          </details>
+          <CodeDetails
+            summary="Markdown"
+            code={`[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](${gitpodifiedUrl})`}
+          />
 
-          <br></br>
+          <h2 className="mx-auto mt-8 mb-4 max-w-3xl text-4xl font-bold text-gray-800 lg:max-w-4xl">
+            Badges
+          </h2>
 
           <div className="mx-auto mb-4 max-w-3xl lg:max-w-4xl">
             <a
               href={gitpodifiedUrl}
               target="_blank"
               rel="noreferrer nofollow"
-              className="rounded-2xl"
+              // Rounded so the focus outline matches the image border
+              className="rounded"
             >
               <img
                 alt="Contribute with Gitpod"
@@ -182,37 +164,23 @@ export default function Index() {
             </a>
           </div>
 
-          <details>
-            <summary className="mx-auto mb-1 max-w-3xl text-sm text-gray-800 lg:max-w-4xl">
-              HTML
-            </summary>
-            <div className="mb-4 py-2" style={{ backgroundColor: "#f9f9f9" }}>
-              <pre className="mx-auto max-w-3xl overflow-x-scroll  pb-4  lg:max-w-4xl">
-                {`<a href="${gitpodifiedUrl}" target="_blank" rel="noreferrer nofollow"> \n  <img\n    alt="Contribute with Gitpod"\n    width="200"\n    height="56"\n    src="https://img.shields.io/badge/Contribute%20with-Gitpod-908a85?logo=gitpod"\n  />\n</a>`}
-              </pre>
-            </div>
-          </details>
+          <CodeDetails
+            summary="HTML"
+            code={`<a href="${gitpodifiedUrl}" target="_blank" rel="noreferrer nofollow"> \n  <img\n    alt="Contribute with Gitpod"\n    width="200"\n    height="56"\n    src="https://img.shields.io/badge/Contribute%20with-Gitpod-908a85?logo=gitpod"\n  />\n</a>`}
+          />
 
-          <details>
-            <summary className="mx-auto mb-1 max-w-3xl text-sm text-gray-800 lg:max-w-4xl">
-              Markdown
-            </summary>
-            <div className="mb-4  py-2" style={{ backgroundColor: "#f9f9f9" }}>
-              <pre className="mx-auto max-w-3xl overflow-x-scroll  pb-4  lg:max-w-4xl">
-                {`[![Contribute with Gitpod](https://img.shields.io/badge/Contribute%20with-Gitpod-908a85?logo=gitpod)](${gitpodifiedUrl})`}
-              </pre>
-            </div>
-          </details>
+          <CodeDetails
+            summary="Markdown"
+            code={`[![Contribute with Gitpod](https://img.shields.io/badge/Contribute%20with-Gitpod-908a85?logo=gitpod)](${gitpodifiedUrl})`}
+          />
 
           <h2 className="mx-auto mt-8 mb-4 max-w-3xl text-4xl font-bold text-gray-800 lg:max-w-4xl">
-            <code>.gitpod.yml</code> file
+            Configuration files
           </h2>
-          <details>
-            <summary className="mx-auto mb-1 max-w-3xl text-sm text-gray-800 lg:max-w-4xl">
-              yml template file (<a className="text-blue-600 visited:text-orange-600" href="https://www.gitpod.io/docs/references/gitpod-yml">check this for more reference</a>)
-            </summary>
-            <pre className="mx-auto max-w-3xl overflow-x-scroll  pb-4  lg:max-w-4xl">
-              <code>{`
+
+          <CodeDetails
+            summary=".gitpod.yml"
+            code={`
 # Commands to start on workspace startup
 tasks:
   - init: yarn install
@@ -221,10 +189,15 @@ tasks:
 ports:
   - port: 8000
     onOpen: open-preview
-`}</code>
-            </pre>
-          </details>  
-
+`}
+          >
+            <a
+              className="text-sky-600 underline hover:text-sky-500"
+              href="https://www.gitpod.io/docs/references/gitpod-yml"
+            >
+              Reference docs
+            </a>
+          </CodeDetails>
         </div>
       ) : (
         <div className="py-32" />
@@ -241,5 +214,83 @@ ports:
         </a>
       </footer>
     </main>
+  );
+}
+
+function CodeDetails({
+  summary,
+  code,
+  children,
+}: {
+  summary: string;
+  code: string;
+  children?: ReactNode;
+}) {
+  return (
+    <details>
+      <summary className="mx-auto mb-1 max-w-3xl text-gray-800 lg:max-w-4xl">
+        {summary}
+      </summary>
+
+      <div className="flex items-baseline gap-x-2">
+        {/* Including as a default for all of them */}
+        <CopyToClipboard code={code} />
+
+        {/* Any other items we want to show  */}
+        {children}
+      </div>
+
+      <div className="mb-4 py-2" style={{ backgroundColor: "#f9f9f9" }}>
+        <pre className="mx-auto max-w-3xl overflow-x-scroll pb-4 lg:max-w-4xl">
+          {code}
+        </pre>
+      </div>
+    </details>
+  );
+}
+
+function CopyToClipboard({ code }: { code: string }) {
+  const [isCopied, setCopied] = useClipboard(code, { successDuration: 1000 });
+
+  return (
+    <button
+      onClick={setCopied}
+      aria-label="Copy code to clipboard"
+      className="p-1 transition-all duration-100 ease-in-out "
+    >
+      {/* A little extra padding on the button for a bigger-than-visual hit area  */}
+      <div className="rounded-xl border px-3 py-2 hover:bg-gray-100">
+        {isCopied ? (
+          // prettier-ignore
+          <span className="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><g fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></g></svg>
+          <span className="px-2">
+          Copied to clipboard
+            </span>
+          </span>
+        ) : (
+          <span className="flex items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="12"
+              viewBox="0 0 24 24"
+            >
+              <g
+                strokeLinejoin="round"
+                strokeLinecap="round"
+                strokeWidth="2"
+                fill="none"
+                stroke="currentColor"
+              >
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </g>
+            </svg>
+            <span className="px-2">Copy to clipboard</span>
+          </span>
+        )}
+      </div>
+    </button>
   );
 }
