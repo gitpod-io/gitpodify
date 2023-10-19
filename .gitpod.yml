@@ -1,19 +1,13 @@
-# https://www.gitpod.io/docs/config-gitpod-file
-
-image:
-  file: .gitpod.Dockerfile
-
 ports:
-  - port: 3000
-    onOpen: notify
+  - port: 5173
+    onOpen: open-preview
 
 tasks:
-  - init: npm install
-    command: npm run dev
+  - init: pnpm install
+    command: pnpm dev
 
 vscode:
   extensions:
-    - ms-azuretools.vscode-docker
     - esbenp.prettier-vscode
-    - dbaeumer.vscode-eslint
     - bradlc.vscode-tailwindcss
+    - svelte.svelte-vscode
