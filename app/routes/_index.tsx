@@ -205,12 +205,12 @@ ports:
       <footer className="py-4 text-center">
         Made with ❤️ by{" "}
         <a
-          href="https://twitter.com/intent/follow?screen_name=jacobmparis"
+          href="https://twitter.com/intent/follow?screen_name=gitpod"
           target="_blank"
           rel="noreferrer nofollow"
           className=" text-sky-600 underline hover:text-sky-500"
         >
-          Jacob Paris
+          Gitpod
         </a>
       </footer>
     </main>

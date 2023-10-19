@@ -1,7 +1,6 @@
 {
   "name": "gitpodify",
   "private": true,
-  "type": "module",
   "scripts": {
     "build": "remix build",
     "dev": "NODE_ENV=development remix dev",
@@ -11,6 +10,8 @@
     "validate": "run-p lint typecheck"
   },
   "dependencies": {
+    "@netlify/functions": "^1.6.0",
+    "@netlify/remix-adapter": "^1.0.0",
     "@prisma/client": "^5.4.2",
     "@remix-run/css-bundle": "^2.1.0",
     "@remix-run/node": "^2.1.0",
@@ -59,7 +60,7 @@
     "vitest": "^0.34.6"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=18"
   },
   "prisma": {
     "seed": "node --require tsconfig-paths/register prisma/seed.js"
