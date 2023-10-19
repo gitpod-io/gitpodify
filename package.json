@@ -1,7 +1,6 @@
 {
   "name": "gitpodify",
   "private": true,
-  "type": "module",
   "scripts": {
     "build": "remix build",
     "dev": "NODE_ENV=development remix dev",
