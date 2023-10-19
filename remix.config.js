@@ -1,3 +1,8 @@
+const prodConfig = {
+    server: './server.js',
+    serverBuildPath: '.netlify/functions-internal/server.js',
+};
+
 /**
  * @type {import('@remix-run/dev').AppConfig}
  */
@@ -6,4 +11,5 @@ export default {
     ignoredRouteFiles: ['**/.*', '**/*.css', '**/*.test.{js,jsx,ts,tsx}'],
     serverDependenciesToBundle: ['normalize-url'],
     tailwind: true,
+    ...(process.env['NODE_ENV'] == 'production' ? prodConfig : {}),
 };
